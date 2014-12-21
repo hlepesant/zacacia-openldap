@@ -1,0 +1,106 @@
+#
+# zacacia.schema
+#
+# Zacacia Schema
+# OIDs are owned by Zarafa
+#
+# Written 2010-08-25 by Hugues Lepesant <hugues =AT= lepesant -DOT- com>
+#
+#
+# 1.3.6.1.4.1.26278.2.1.x   - Directory
+# 1.3.6.1.4.1.26278.2.1.1.x - attributetype
+# 1.3.6.1.4.1.26278.2.1.2.x - objectclasses
+#
+# ZacaciaOID
+
+objectIdentifier zarafaPrefix 1.3.6.1.4.1.26278
+objectIdentifier zacaciaAttributeType zarafaPrefix:2.1
+objectIdentifier zacaciaObjectClass zarafaPrefix:2.2
+
+
+## attributeType ##
+
+attributetype ( zacaciaAttributeType:1 NAME 'zacaciaStatus'
+  DESC 'Zacacia: Node Status (new, deleted, updated, enable, ...).'
+  EQUALITY caseIgnoreIA5Match
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+attributetype ( zacaciaAttributeType:2 NAME 'zacaciaUnDeletable'
+  DESC 'Zacacia: object can be deleted using Web User Interface'
+  EQUALITY integerMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+
+attributetype ( zacaciaAttributeType:3 NAME 'zacaciaCAL'
+  DESC 'Zacacia: number of CAL'
+  EQUALITY integerMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+
+attributetype ( zacaciaAttributeType:4 NAME 'zacaciaMultiTenant'
+  DESC 'Zacacia: Server is a mutli-tenant server'
+  EQUALITY integerMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+
+attributetype ( zacaciaAttributeType:5 NAME 'zacaciaMultiServer'
+  DESC 'Zacacia: Platform is a mutli-server platform'
+  EQUALITY integerMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+
+## objectClass ##
+
+objectclass ( zacaciaObjectClass:1 NAME 'zacaciaSecurityGroup'
+	DESC 'Zacacia Security Group'
+	SUP top
+	STRUCTURAL
+	MUST ( cn )
+	MAY ( member ) )
+
+objectclass ( zacaciaObjectClass:2 NAME 'zacaciaPlatform'
+	DESC 'Zacacia Platform'
+	SUP top
+	AUXILIARY
+	MUST ( cn )
+	MAY ( zacaciaMultiTenant $ zacaciaMultiServer $ zacaciaStatus $ zacaciaUnDeletable ) )
+
+objectclass ( zacaciaObjectClass:3 NAME 'zacaciaCompany'
+	DESC 'Zacacia Company'
+	SUP top
+	AUXILIARY
+	MUST ( cn )
+	MAY ( gidNumber $ zacaciaStatus $ zacaciaUnDeletable $ zacaciaCAL ) )
+
+objectclass ( zacaciaObjectClass:4 NAME 'zacaciaDomain'
+	DESC 'Zacacia Domain'
+	SUP top
+	AUXILIARY
+	MUST ( cn )
+	MAY ( zacaciaStatus $ zacaciaUnDeletable ) )
+
+objectclass ( zacaciaObjectClass:5 NAME 'zacaciaGroup'
+	DESC 'Zacacia Group'
+	SUP top
+	AUXILIARY
+	MUST ( cn )
+	MAY ( zacaciaStatus $ zacaciaUnDeletable ) )
+
+objectclass ( zacaciaObjectClass:6 NAME 'zacaciaUser'
+	DESC 'Zacacia User'
+	SUP top
+	AUXILIARY
+	MUST ( uid )
+	MAY ( zacaciaStatus $ zacaciaUnDeletable ) )
+
+objectclass ( zacaciaObjectClass:7 NAME 'zacaciaForward'
+	DESC 'Zacacia forward'
+	SUP top STRUCTURAL
+    	MUST ( mail ))
+
+objectclass ( zacaciaObjectClass:8 NAME 'zacaciaServer'
+	DESC 'Zacacia Server'
+	SUP top
+	AUXILIARY
+	MUST ( cn )
+	MAY ( 
+		zacaciaMultiTenant $ zacaciaStatus $ zacaciaUnDeletable $
+		zarafaAccount $ zarafaQuotaWarn $ zarafaQuotaSoft $ zarafaQuotaHard
+	    )
+        )

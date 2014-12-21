@@ -1,0 +1,10 @@
+dn: olcDatabase={1}hdb,cn=config
+changetype: modify
+replace: olcRootPW
+olcRootPW: {SSHA}zU9R5DY6JzEqg9ll9+7XM8zoPVHD24Om
+-
+
+dn: olcDatabase={0}config,cn=config
+changetype: modify
+replace: olcRootPW
+olcRootPW: {SSHA}zU9R5DY6JzEqg9ll9+7XM8zoPVHD24Om
