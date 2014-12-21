@@ -66,7 +66,7 @@ COPY conf/olcDbIndex.ldif /tmp/olcDbIndex.ldif
 COPY conf/zacacia.ldif /tmp/zacacia.ldif
 
 COPY conf/postbuild.sh /root/
-RUN chmod +x /conf/postbuild.sh
+RUN chmod +x /root/postbuild.sh
 
 
 # RUN /usr/bin/ldapmodify -Y EXTERNAL -H ldapi:/// -f /tmp/pwd.ldif
