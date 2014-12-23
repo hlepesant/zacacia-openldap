@@ -45,20 +45,17 @@ ou: SecurityGroups
 objectClass: top
 objectClass: organizationalUnit
 
-dn: cn=OrganizationAdmin,ou=SecurityGroups,cn=Hugues,ou=Platforms,ou=Zacacia,o
- u=Applications,dc=zarafa,dc=com
+dn: cn=OrganizationAdmin,ou=SecurityGroups,cn=Hugues,ou=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
 cn: OrganizationAdmin
 objectClass: top
 objectClass: zacaciaSecurityGroup
 
-dn: cn=ServerAdmin,ou=SecurityGroups,cn=Hugues,ou=Platforms,ou=Zacacia,ou=Appl
- ications,dc=zarafa,dc=com
+dn: cn=ServerAdmin,ou=SecurityGroups,cn=Hugues,ou=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
 cn: ServerAdmin
 objectClass: top
 objectClass: zacaciaSecurityGroup
 
-dn: cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zacacia,ou=Applicat
- ions,dc=zarafa,dc=com
+dn: cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
 objectClass: top
 objectClass: organizationalRole
 objectClass: zarafa-company
@@ -70,94 +67,79 @@ gidNumber: 10001
 zarafaAccount: 1
 zarafaHidden: 1
 
-dn: ou=AddressLists,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zac
- acia,ou=Applications,dc=zarafa,dc=com
+dn: ou=AddressLists,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
 ou: AddressLists
 objectClass: top
 objectClass: organizationalUnit
 
-dn: ou=Contacts,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zacacia
- ,ou=Applications,dc=zarafa,dc=com
+dn: ou=Contacts,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
 ou: Contacts
 objectClass: top
 objectClass: organizationalUnit
 
-dn: ou=Domains,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zacacia,
- ou=Applications,dc=zarafa,dc=com
+dn: ou=Domains,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
 ou: Domains
 objectClass: top
 objectClass: organizationalUnit
 
-dn: ou=Forwards,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zacacia
- ,ou=Applications,dc=zarafa,dc=com
+dn: ou=Forwards,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
 ou: Forwards
 objectClass: top
 objectClass: organizationalUnit
 
-dn: ou=Groups,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zacacia,o
- u=Applications,dc=zarafa,dc=com
+dn: ou=Groups,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
 ou: Groups
 objectClass: top
 objectClass: organizationalUnit
 
-dn: ou=Users,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zacacia,ou
- =Applications,dc=zarafa,dc=com
+dn: ou=Users,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
 ou: Users
 objectClass: top
 objectClass: organizationalUnit
 
-dn: ou=SecurityGroups,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Z
- acacia,ou=Applications,dc=zarafa,dc=com
+dn: ou=SecurityGroups,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
 ou: SecurityGroups
 objectClass: top
 objectClass: organizationalUnit
 
-dn: cn=AddressListAdmin,ou=SecurityGroups,cn=Lepesant,ou=Organizations,cn=Hugu
- es,ou=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
+dn: cn=AddressListAdmin,ou=SecurityGroups,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
 cn: AddressListAdmin
 objectClass: top
 objectClass: zacaciaSecurityGroup
 
-dn: cn=ContactAdmin,ou=SecurityGroups,cn=Lepesant,ou=Organizations,cn=Hugues,o
- u=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
+dn: cn=ContactAdmin,ou=SecurityGroups,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
 cn: ContactAdmin
 objectClass: top
 objectClass: zacaciaSecurityGroup
 
-dn: cn=DomainAdmin,ou=SecurityGroups,cn=Lepesant,ou=Organizations,cn=Hugues,ou
- =Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
+dn: cn=DomainAdmin,ou=SecurityGroups,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
 cn: DomainAdmin
 objectClass: top
 objectClass: zacaciaSecurityGroup
 
-dn: cn=ForwardAdmin,ou=SecurityGroups,cn=Lepesant,ou=Organizations,cn=Hugues,o
- u=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
+dn: cn=ForwardAdmin,ou=SecurityGroups,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
 cn: ForwardAdmin
 objectClass: top
 objectClass: zacaciaSecurityGroup
 
-dn: cn=GroupAdmin,ou=SecurityGroups,cn=Lepesant,ou=Organizations,cn=Hugues,ou=
- Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
+dn: cn=GroupAdmin,ou=SecurityGroups,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
 cn: GroupAdmin
 objectClass: top
 objectClass: zacaciaSecurityGroup
 
-dn: cn=UserAdmin,ou=SecurityGroups,cn=Lepesant,ou=Organizations,cn=Hugues,ou=P
- latforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
+dn: cn=UserAdmin,ou=SecurityGroups,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
 cn: UserAdmin
 objectClass: top
 objectClass: zacaciaSecurityGroup
 
-dn: cn=lepesant.com,ou=Domains,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platf
- orms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
+dn: cn=lepesant.com,ou=Domains,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
 objectClass: top
 objectClass: organizationalRole
 objectClass: zacaciaDomain
 cn: lepesant.com
 zacaciaStatus: enable
 
-dn: cn=Hugues Lepesant,ou=Users,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Plat
- forms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
+dn: cn=Hugues Lepesant,ou=Users,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
 objectClass: top
 objectClass: posixAccount
 objectClass: inetOrgPerson
@@ -184,8 +166,7 @@ uidNumber: 10001
 zarafaAliases: hug@lepesant.com
 zarafaAliases: hugues@zacacia.com
 
-dn: cn=mail.lepesant.com,ou=Servers,cn=Hugues,ou=Platforms,ou=Zacacia,ou=Appli
- cations,dc=zarafa,dc=com
+dn: cn=mail.lepesant.com,ou=Servers,cn=Hugues,ou=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
 objectClass: top
 objectClass: organizationalRole
 objectClass: zarafa-server
@@ -199,8 +180,7 @@ zarafaFilePath: /var/run/zarafa
 zarafaHttpPort: 236
 zarafaSslPort: 237
 
-dn: cn=Henri Lepesant,ou=Users,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platf
- orms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
+dn: cn=Henri Lepesant,ou=Users,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
 objectClass: top
 objectClass: posixAccount
 objectClass: inetOrgPerson
@@ -224,8 +204,7 @@ userPassword:: e01ENX1SUU9Pd2IzUzhrMlhEeGZ3UkxEM3FnPT0=
 uidNumber: 10002
 gidNumber: 10001
 
-dn: cn=Jean Lepesant,ou=Users,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platfo
- rms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
+dn: cn=Jean Lepesant,ou=Users,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
 objectClass: top
 objectClass: posixAccount
 objectClass: inetOrgPerson
@@ -245,8 +224,7 @@ userPassword:: e01ENX1SUU9Pd2IzUzhrMlhEeGZ3UkxEM3FnPT0=
 uidNumber: 10003
 gidNumber: 10001
 
-dn: cn=zacacia.com,ou=Domains,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platfo
- rms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
+dn: cn=zacacia.com,ou=Domains,cn=Lepesant,ou=Organizations,cn=Hugues,ou=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
 objectClass: top
 objectClass: organizationalRole
 objectClass: zacaciaDomain
@@ -275,14 +253,12 @@ ou: SecurityGroups
 objectClass: top
 objectClass: organizationalUnit
 
-dn: cn=OrganizationAdmin,ou=SecurityGroups,cn=Marie,ou=Platforms,ou=Zacacia,ou
- =Applications,dc=zarafa,dc=com
+dn: cn=OrganizationAdmin,ou=SecurityGroups,cn=Marie,ou=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
 cn: OrganizationAdmin
 objectClass: top
 objectClass: zacaciaSecurityGroup
 
-dn: cn=ServerAdmin,ou=SecurityGroups,cn=Marie,ou=Platforms,ou=Zacacia,ou=Appli
- cations,dc=zarafa,dc=com
+dn: cn=ServerAdmin,ou=SecurityGroups,cn=Marie,ou=Platforms,ou=Zacacia,ou=Applications,dc=zarafa,dc=com
 cn: ServerAdmin
 objectClass: top
 objectClass: zacaciaSecurityGroup

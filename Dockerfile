@@ -19,14 +19,11 @@ RUN apt-get update
 RUN apt-get -y upgrade
 RUN apt-get -y dist-upgrade
 RUN apt-get -y install curl sudo apt-utils net-tools procps vim ldap-utils
-# RUN apt-get -y install slapd
-# RUN apt-get clean
-
 
 ## install slapd in noninteractive mode
-RUN echo 'slapd/root_password password password' | debconf-set-selections &&\
-    echo 'slapd/root_password_again password password' | debconf-set-selections && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y slapd ldap-utils
+RUN echo 'slapd/root_password password password' | debconf-set-selections
+RUN echo 'slapd/root_password_again password password' | debconf-set-selections
+RUN apt-get install -y slapd ldap-utils
 
 RUN apt-get clean
 
@@ -36,14 +33,14 @@ RUN apt-get clean
 RUN echo "slapd slapd/no_configuration boolean false" | debconf-set-selections
 RUN echo "slapd slapd/domain string zarafa.com" | debconf-set-selections
 RUN echo "slapd shared/organization string 'Zarafa'" | debconf-set-selections
-RUN echo "slapd slapd/password1 password secret" | debconf-set-selections
-RUN echo "slapd slapd/password2 password secret" | debconf-set-selections
+RUN echo "slapd slapd/password1 password password" | debconf-set-selections
+RUN echo "slapd slapd/password2 password password" | debconf-set-selections
 RUN echo "jslapd slapd/backend select HDB" | debconf-set-selections
 RUN echo "slapd slapd/purge_database boolean true" | debconf-set-selections
 RUN echo "slapd slapd/allow_ldap_v2 boolean false" | debconf-set-selections
 RUN echo "slapd slapd/move_old_database boolean true" | debconf-set-selections
 
-RUN dpkg-reconfigure -f noninteractive slapd
+RUN dpkg-reconfigure slapd
 
 
 ADD conf/zacacia.conf /root/zacacia.conf
@@ -64,14 +61,8 @@ RUN /etc/init.d/slapd stop
 COPY conf/pwd.ldif /tmp/pwd.ldif
 COPY conf/olcDbIndex.ldif /tmp/olcDbIndex.ldif
 COPY conf/zacacia.ldif /tmp/zacacia.ldif
-
 COPY conf/postbuild.sh /root/
 RUN chmod +x /root/postbuild.sh
-
-
-# RUN /usr/bin/ldapmodify -Y EXTERNAL -H ldapi:/// -f /tmp/pwd.ldif
-# RUN /usr/bin/ldapmodify -Y EXTERNAL -H ldapi:/// -f /tmp/olcDbIndex.ldif
-# RUN /usr/bin/ldapadd -x -D  cn=admin,dc=nodomain -w sercret -f /tmp/zacacia.ldif
 
 EXPOSE 389
 
