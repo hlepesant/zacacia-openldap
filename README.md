@@ -14,3 +14,15 @@ This Dockerfile build the Apache Web Server need to run this appication.
 ```
 $ docker run -p 389:389 --name ldap -d hlepesant/zacacia-openldap:latest  
 ```
+
+## Data fixtures
+
+Install nsenter(https://github.com/jpetazzo/nsenter).
+Then run
+
+```
+$ docker ps
+$ docker-enter <container_ID>
+root@<container_ID>: /root/postbuild.sh
+root@<container_ID>: exit
+```
