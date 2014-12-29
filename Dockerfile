@@ -5,7 +5,6 @@ MAINTAINER hlepesant <hugues@lepesant.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 ENV SHELL /bin/bash
-
 RUN echo 'shell /bin/bash' > ~/.screenrc
 
 RUN echo "deb http://ftp.fr.debian.org/debian/ wheezy main contrib non-free" > /etc/apt/sources.list
