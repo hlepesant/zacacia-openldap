@@ -12,5 +12,5 @@ This Dockerfile build the Apache Web Server need to run this appication.
 ## Usage
 
 ```
-$ docker run -p 389:389 -d hlepesant/zacacia-openldap
+$ docker run -p 389:389 --name ldap -d hlepesant/zacacia-openldap:latest  
 ```
