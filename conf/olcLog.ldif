@@ -1,0 +1,9 @@
+dn: cn=config
+changetype: modify
+replace: olcLogLevel
+olcLogLevel: stats
+
+dn: cn=config
+changetype: modify
+replace: olcLogFile
+olcLogFile: /var/log/slapd.log

@@ -1,3 +1,4 @@
+#
 FROM debian:wheezy
 
 MAINTAINER hlepesant <hugues@lepesant.com>
@@ -18,6 +19,7 @@ RUN apt-get update
 RUN apt-get -y upgrade
 RUN apt-get -y dist-upgrade
 RUN apt-get -y install curl sudo apt-utils net-tools procps vim ldap-utils
+RUN apt-get -y install rsyslog
 
 ## install slapd in noninteractive mode
 RUN echo 'slapd/root_password password password' | debconf-set-selections
@@ -59,6 +61,7 @@ RUN /etc/init.d/slapd stop
 
 COPY conf/pwd.ldif /tmp/pwd.ldif
 COPY conf/olcDbIndex.ldif /tmp/olcDbIndex.ldif
+COPY conf/olcLog.ldif /tmp/olcLog.ldif
 COPY conf/zacacia.ldif /tmp/zacacia.ldif
 COPY conf/postbuild.sh /root/
 RUN chmod +x /root/postbuild.sh

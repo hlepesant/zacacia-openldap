@@ -6,6 +6,13 @@
 #	/usr/bin/ldapmodify -Y EXTERNAL -H ldapi:/// -f /tmp/pwd.ldif
 #fi
 
+if [ -f "/tmp/olcLog.ldif" ]
+then
+        touch /var/log/slapd.log
+        chown openldap:openldap /var/log/slapd.log
+	/usr/bin/ldapmodify -Y EXTERNAL -H ldapi:/// -f /tmp/olcLog.ldif
+fi
+
 if [ -f "/tmp/olcDbIndex.ldif" ]
 then
 	/usr/bin/ldapmodify -Y EXTERNAL -H ldapi:/// -f /tmp/olcDbIndex.ldif
