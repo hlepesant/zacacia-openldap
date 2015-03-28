@@ -9,6 +9,12 @@ Zarafa, The Best Open Source Email & Collaboration Software, is an Ms Exchange a
 
 This Dockerfile build the Apache Web Server need to run this appication.
 
+## Build
+
+...
+docker build --tag="hlepesant/zacacia-openldap:latest" .
+...
+
 ## Usage
 
 ```
