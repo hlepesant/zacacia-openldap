@@ -1,5 +1,5 @@
 #
-FROM debian:wheezy
+FROM debian:jessie
 
 MAINTAINER hlepesant <hugues@lepesant.com>
 
@@ -8,12 +8,12 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV SHELL /bin/bash
 RUN echo 'shell /bin/bash' > ~/.screenrc
 
-RUN echo "deb http://ftp.fr.debian.org/debian/ wheezy main contrib non-free" > /etc/apt/sources.list
-RUN echo "deb-src http://ftp.fr.debian.org/debian/ wheezy main contrib non-free" >> /etc/apt/sources.list
-RUN echo "deb http://security.debian.org/ wheezy/updates main contrib non-free" >> /etc/apt/sources.list
-RUN echo "deb-src http://security.debian.org/ wheezy/updates main contrib non-free" >> /etc/apt/sources.list
-RUN echo "deb http://ftp.fr.debian.org/debian/ wheezy-updates main contrib non-free" >> /etc/apt/sources.list
-RUN echo "deb-src http://ftp.fr.debian.org/debian/ wheezy-updates main contrib non-free" >> /etc/apt/sources.list
+RUN echo "deb http://ftp.fr.debian.org/debian/ jessie main contrib non-free" > /etc/apt/sources.list
+RUN echo "deb-src http://ftp.fr.debian.org/debian/ jessie main contrib non-free" >> /etc/apt/sources.list
+RUN echo "deb http://security.debian.org/ jessie/updates main contrib non-free" >> /etc/apt/sources.list
+RUN echo "deb-src http://security.debian.org/ jessie/updates main contrib non-free" >> /etc/apt/sources.list
+RUN echo "deb http://ftp.fr.debian.org/debian/ jessie-updates main contrib non-free" >> /etc/apt/sources.list
+RUN echo "deb-src http://ftp.fr.debian.org/debian/ jessie-updates main contrib non-free" >> /etc/apt/sources.list
 
 RUN apt-get update
 RUN apt-get -y upgrade
