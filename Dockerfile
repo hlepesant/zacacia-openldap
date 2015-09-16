@@ -15,31 +15,35 @@ RUN echo "deb-src http://security.debian.org/ jessie/updates main contrib non-fr
 RUN echo "deb http://ftp.fr.debian.org/debian/ jessie-updates main contrib non-free" >> /etc/apt/sources.list
 RUN echo "deb-src http://ftp.fr.debian.org/debian/ jessie-updates main contrib non-free" >> /etc/apt/sources.list
 
+
+
+
+
+
+
 RUN apt-get update
 RUN apt-get -y upgrade
 RUN apt-get -y dist-upgrade
-RUN apt-get -y install curl sudo apt-utils net-tools procps vim ldap-utils
+RUN apt-get -y install apt-utils
+RUN apt-get -y install curl sudo net-tools procps vim ldap-utils
 RUN apt-get -y install rsyslog
 
-## install slapd in noninteractive mode
-RUN echo 'slapd/root_password password password' | debconf-set-selections
-RUN echo 'slapd/root_password_again password password' | debconf-set-selections
+RUN echo "slapd slapd/root_password password password" |debconf-set-selections
+RUN echo "slapd slapd/root_password_again password password" |debconf-set-selections
+RUN echo "slapd slapd/internal/adminpw password password" |debconf-set-selections
+RUN echo "slapd slapd/internal/generated_adminpw password password" |debconf-set-selections
+RUN echo "slapd slapd/password2 password password" |debconf-set-selections
+RUN echo "slapd slapd/password1 password password" |debconf-set-selections
+RUN echo "slapd slapd/domain string zarafa.com" |debconf-set-selections
+RUN echo "slapd shared/organization string Zarafa" |debconf-set-selections
+RUN echo "slapd slapd/backend string HDB" |debconf-set-selections
+RUN echo "slapd slapd/purge_database boolean true" |debconf-set-selections
+RUN echo "slapd slapd/move_old_database boolean true" |debconf-set-selections
+RUN echo "slapd slapd/allow_ldap_v2 boolean false" |debconf-set-selections
+RUN echo "slapd slapd/no_configuration boolean false" |debconf-set-selections
 RUN apt-get install -y slapd ldap-utils
 
 RUN apt-get clean
-
-## set up required inputs for configuration of slapd
-## debconf-set-selections is used so that we can run dpkg-reconfigure
-## noninteractively below
-RUN echo "slapd slapd/no_configuration boolean false" | debconf-set-selections
-RUN echo "slapd slapd/domain string zarafa.com" | debconf-set-selections
-RUN echo "slapd shared/organization string 'Zarafa'" | debconf-set-selections
-RUN echo "slapd slapd/password1 password password" | debconf-set-selections
-RUN echo "slapd slapd/password2 password password" | debconf-set-selections
-RUN echo "jslapd slapd/backend select HDB" | debconf-set-selections
-RUN echo "slapd slapd/purge_database boolean true" | debconf-set-selections
-RUN echo "slapd slapd/allow_ldap_v2 boolean false" | debconf-set-selections
-RUN echo "slapd slapd/move_old_database boolean true" | debconf-set-selections
 
 RUN dpkg-reconfigure slapd
 
