@@ -28,7 +28,7 @@ Then run
 
 ```
 $ docker ps
-$ docker-enter <container_ID>
+$ docker-enter ldap
 root@<container_ID>: /root/postbuild.sh
 root@<container_ID>: exit
 ```
@@ -36,6 +36,6 @@ root@<container_ID>: exit
 To check :
 
 ```
-$ apt-get install ldap-utils
+$ sudo apt-get install ldap-utils
 $ ldapsearch -x -h localhost -b "ou=Zacacia,ou=Applications,dc=zarafa,dc=com" -D "cn=admin,dc=zarafa,dc=com" -wpassword "objectclass=*"
 ```
